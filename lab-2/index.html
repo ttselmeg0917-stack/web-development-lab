@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>lab-2: hereglegchiin anket</title>
+</head>
+<body>
+    <header>
+        <h2>Минии сонирхол</h2>
+        <nav>
+            <ul>
+                <li>Шатар</li>
+                <li>Сур харваа</li>
+                <li>Код бичих</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2> Хувийн мэдээлэл </h2>
+            <article>
+                <form action="">
+                    <p>
+                        <label for="name"></label><br>
+                        <input type="text" name="name" id="name" placeholder="овог нэр бичнэ үү."minlength="2" required><br><br>
+                    </p>
+                    <p>
+                        <label for="email">Цахим хаяг (Email):</label><br>
+                        <input type="email" name="email" id="email"  placeholder="example@domain.com" required><br><br>
+                    </p>
+                    <p>
+                        <label for="password">Нууц үг:</label><br>
+                        <input type="password" name="password" id="password" required minlength="6"><br><br>
+                    </p>
+                    <p>
+                        <label for="phone">Утасны дугаар:</label><br>
+                        <input type="phone" name="phone" id="phone"  pattern="[0-9]{8}" placeholder="88112233" required><br><br>
+                    </p>
+                    <p>
+                        <label for="date">Төрсөн огноо:</label><br>
+                        <input type="date" name="date" id="date" required><br><br>
+                    </p>
+                    <p>
+                        <label for="">хүйс</label><br>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="male">Эрэгтэй</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Эмэгтэй</label><br>
+                    </p>
+                    <fieldset>
+                        <legend>Боловсрол ба Сонирхол</legend>
+                        <label for="degree">Суралцаж буй түвшин:</label><br>
+                        <select name="degree" id="degree" required>
+                            <option value="">Сонгоно уу</option>
+                            <option value="bachelor">Бакалавр</option>
+                            <option value="master">Магистр</option>
+                            <option value="doctor">Докторант</option>
+                        </select><br><br>
+                    </fieldset>
+                    <p>
+                        <label>Сонирхож буй технологиуд:</label><br>
+                        <input type="checkbox" id="html" name="skills" value="HTML">
+                        <label for="html">HTML5 / CSS3</label><br>
+                        <input type="checkbox" id="js" name="skills" value="JavaScript">
+                        <label for="js">JavaScript</label><br>
+                        <input type="checkbox" id="php" name="skills" value="PHP">
+                        <label for="php">PHP & MySQL</label><br><br>
+                    </p>
+                    <p>
+                        <label for="avatar">Профайл зураг оруулна уу:</label><br>
+                        <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+                    </p>
+                    <p>
+                        <label for="bio">Товч танилцуулга / Өөрийн тухай:</label><br>
+                        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Өөрийн танилцуулгыг энд бичнэүү..."></textarea><br>
+                    </p>
+                    <p>
+                        <button type="submit">Анкет Илгээх</button>
+                        <button type="reset">Дахин эхлүүлэх</button>
+                    </p>
+                </form>
+            </article>
+        </section>
+        <section>
+            <h2>Минии дүн</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>хичээлиин нэр</th>
+                        <th>Программчлалын үндэс</th>
+                        <th>Программчлалын үндсэн аргууд</th>
+                        <th>Объект хандлагат программчлал</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>дүн</td>
+                        <td>92</td>
+                        <td>87</td>
+                        <td>88</td>
+                    </tr>
+                    <tr>
+                        <td>Чан.оноо</td>
+                        <td>3.7</td>
+                        <td>3.3</td>
+                        <td>3.3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <h3>B25227007 Т.Цэлмэг</h3>
+    </footer>
+</body>
+</html>
