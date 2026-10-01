@@ -1,0 +1,246 @@
+
+
+:root {
+    --bg: #0b1f24;
+    --card: #06393d;
+    --accent: #1fc99a;
+    --text: #e8f4f2;
+    --muted: #9cc3bd;
+    --danger: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px 16px;
+    font-family: "Noto Sans", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+main {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+
+header {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
+.minii {
+    margin: 0 0 12px;
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+.sonirhol ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sonirhol li {
+    padding: 6px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.medeelel,
+.gpa {
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    font-size: 22px;
+}
+
+section {
+    margin-bottom: 28px;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid #0d5a5f;
+    border-radius: 14px;
+}
+
+form p {
+    margin: 0 0 16px;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+form br {
+    display: none;
+}
+
+
+.text input,
+.email input,
+.password input,
+.phone input,
+.date input,
+.file input,
+#degree,
+.bio textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #1a7a7f;
+    border-radius: 8px;
+    background: #052c30;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(31, 201, 154, 0.25);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--danger);
+}
+
+.bio textarea {
+    resize: vertical;
+}
+
+.technology label {
+    margin: 0 14px 0 4px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.technology label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.technology input {
+    margin-right: 6px;
+    accent-color: var(--accent);
+}
+
+.gender input {
+    accent-color: var(--accent);
+}
+
+.degree {
+    margin: 0 0 16px;
+    padding: 14px 16px;
+    border: 1.5px dashed var(--accent);
+    border-radius: 10px;
+}
+
+.degree legend {
+    padding: 0 8px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.button {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button button {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.2s;
+}
+
+.button button[type="submit"] {
+    background: var(--accent);
+    color: #04201f;
+}
+
+.button button[type="submit"]:hover {
+    background: #3be3b4;
+    transform: translateY(-2px);
+}
+
+.button button[type="reset"] {
+    background: transparent;
+    border: 1.5px solid var(--muted);
+    color: var(--muted);
+}
+
+
+
+.medeelel {
+    position: relative;
+    display: inline-block;
+}
+
+.password:hover::after {
+    content: "Хамгийн багадаа 6 тэмдэгт";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+td {
+    padding: 10px 12px;
+    border: 1px solid #0d5a5f;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background: var(--accent);
+    color: #04201f;
+}
+
+
+
+footer {
+    text-align: center;
+}
+
+.code {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--card);
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
