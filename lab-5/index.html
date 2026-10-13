@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Цэлмэг Кофе | Coffee Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="cup" viewBox="0 0 220 200">
+        <circle cx="100" cy="100" r="96" fill="#efe9e2"/>
+        <circle cx="100" cy="100" r="88" fill="#f8f5f1"/>
+        <rect x="155" y="86" width="56" height="28" rx="14" fill="#ffffff" stroke="#e6ded4" stroke-width="2"/>
+        <circle cx="100" cy="100" r="70" fill="#ffffff" stroke="#ece4da" stroke-width="2"/>
+        <circle cx="100" cy="100" r="58" fill="#7a4a24"/>
+        <circle cx="100" cy="100" r="53" fill="#a7693a"/>
+        <path d="M100 136 C62 108 70 72 100 90 C130 72 138 108 100 136Z" fill="#f4e4cf"/>
+        <path d="M100 124 C78 106 84 86 100 97 C116 86 122 106 100 124Z" fill="#c98f5c"/>
+        <path d="M100 116 C88 105 92 94 100 101 C108 94 112 105 100 116Z" fill="#f4e4cf"/>
+        <path d="M100 136 L100 70" stroke="#f4e4cf" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="bean" viewBox="0 0 40 28">
+        <ellipse cx="20" cy="14" rx="19" ry="13" fill="#5b3a24"/>
+        <path d="M5 16 C14 5 26 23 35 12" stroke="#2f1d10" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="leaf" viewBox="0 0 200 260">
+        <path d="M100 250 C20 200 0 110 40 40 C70 0 140 0 165 45 C200 115 175 205 100 250Z" fill="currentColor"/>
+        <path d="M100 250 C95 170 100 90 110 20 M102 200 L60 160 M101 160 L55 115 M103 120 L65 75 M103 190 L150 150 M104 145 L155 100 M106 100 L148 60"
+              stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#home" class="logo">Цэлмэг<span>кофе</span></a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="active">Нүүр</a>
+        <a href="#offer">Санал</a>
+        <a href="#featured">Онцлох</a>
+        <a href="#menu">Цэс</a>
+        <a href="#contact">Холбоо барих</a>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" aria-label="Хайх">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </a>
+        <a href="#" aria-label="Хэрэглэгч" class="hide-sm">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
+        </a>
+        <a href="#" aria-label="Дуртай" class="hide-sm">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+        </a>
+        <a href="#" aria-label="Сагс" class="cart">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="badge">2</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <svg class="leaf leaf-1"><use href="#leaf"/></svg>
+      <svg class="leaf leaf-2"><use href="#leaf"/></svg>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Шинэхэн шарсан<br>кофе танд</h1>
+          <p>Ногоон кофены үрийг халуун агаарт шарж, өглөө бүр шинээр нунтаглан бэлтгэдэг. Амт, үнэрийг нь мэдрээрэй.</p>
+          <a href="#menu" class="btn btn-dark">Захиалах</a>
+        </div>
+        <div class="hero-visual">
+          <svg class="hero-cup"><use href="#cup"/></svg>
+          <svg class="bean b1"><use href="#bean"/></svg>
+          <svg class="bean b2"><use href="#bean"/></svg>
+          <svg class="bean b3"><use href="#bean"/></svg>
+          <svg class="bean b4"><use href="#bean"/></svg>
+          <svg class="bean b5"><use href="#bean"/></svg>
+          <svg class="bean b6"><use href="#bean"/></svg>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="offer">
+      <div class="container">
+        <div class="section-head">
+          <h2>Манай амттай санал</h2>
+          <p>Кофе сонирхогч бүрт тохирох сонголт бидэнд бий. Өдөр бүр шинээр бэлтгэнэ.</p>
+        </div>
+        <div class="offer-grid">
+          <div class="offer-item">
+            <svg class="line-icon" viewBox="0 0 64 64">
+              <path d="M12 24h34v12a15 15 0 0 1-15 15h-4A15 15 0 0 1 12 36z"/>
+              <path d="M46 28h4a6 6 0 0 1 0 12h-5"/>
+              <path d="M8 56h44"/>
+              <path d="M24 8c-3 4 3 6 0 11M33 8c-3 4 3 6 0 11"/>
+            </svg>
+            <h3>Кофены төрөл</h3>
+            <p>Эспрессо, латте, капучино зэрэг сонгодог ундаанууд.</p>
+          </div>
+          <div class="offer-item">
+            <svg class="line-icon" viewBox="0 0 64 64">
+              <ellipse cx="22" cy="30" rx="11" ry="16" transform="rotate(-30 22 30)"/>
+              <path d="M14 40c8-4 6-16 16-20"/>
+              <ellipse cx="44" cy="36" rx="11" ry="16" transform="rotate(25 44 36)"/>
+              <path d="M38 50c4-8 2-20 12-26"/>
+            </svg>
+            <h3>Үрийн төрөл</h3>
+            <p>Этиоп, Колумб, Бразилын шилдэг үрүүд.</p>
+          </div>
+          <div class="offer-item">
+            <svg class="line-icon" viewBox="0 0 64 64">
+              <path d="M6 40c4-12 14-20 26-20s22 8 26 20c-6 4-12 2-14-2-4 6-20 6-24 0-2 4-8 6-14 2z"/>
+              <path d="M24 22l4 16M40 22l-4 16M32 20v18"/>
+            </svg>
+            <h3>Кофе & Нарийн боов</h3>
+            <p>Шинээр жигнэсэн круассан, маффин, бялуу.</p>
+          </div>
+          <div class="offer-item">
+            <svg class="line-icon" viewBox="0 0 64 64">
+              <path d="M18 20h28l-4 36H22z"/>
+              <path d="M15 13h34v7H15z"/>
+              <path d="M22 9h20v4H22z"/>
+              <path d="M20 32h24"/>
+            </svg>
+            <h3>Авч явах кофе</h3>
+            <p>Яарч байна уу? Хэдхэн минутад бэлэн болно.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="featured" id="featured">
+      <svg class="leaf leaf-3"><use href="#leaf"/></svg>
+      <div class="container featured-inner">
+        <div class="featured-visual">
+          <div class="blob"></div>
+          <svg class="featured-cup"><use href="#cup"/></svg>
+          <svg class="bean b7"><use href="#bean"/></svg>
+          <svg class="bean b8"><use href="#bean"/></svg>
+        </div>
+        <div class="featured-text">
+          <h2>Арабика & Робуста<br>Шинэ онцгой кофе</h2>
+          <p>Хоёр төрлийн үрийг тэнцвэртэй хольж, зөөлөн хүчиллэг, шоколадан амттай шинэ холимог бүтээлээ. Зөвхөн манай кофе шопт.</p>
+          <ul class="featured-info">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 13h6M9 17h6"/></svg>
+              Үнийн жагсаалт татах
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              +976 9911-2233
+            </li>
+          </ul>
+          <div class="btn-group">
+            <a href="#offer" class="btn btn-dark btn-sm">Дэлгэрэнгүй</a>
+            <a href="#menu" class="btn btn-dark btn-sm">Захиалах</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <h2>Хамгийн их захиалагддаг</h2>
+          <p>Манай зочдын хамгийн их дуртай ундаанууд. Та ч бас амтлаад үзээрэй.</p>
+        </div>
+        <div class="menu-list">
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Американо</span>
+            <span class="dots"></span>
+            <span class="price">6,500₮</span>
+          </div>
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Матча латте</span>
+            <span class="dots"></span>
+            <span class="price">8,000₮</span>
+          </div>
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Карамель латте</span>
+            <span class="dots"></span>
+            <span class="price">8,500₮</span>
+          </div>
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Бразил шарсан кофе</span>
+            <span class="dots"></span>
+            <span class="price">9,000₮</span>
+          </div>
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Италийн эспрессо</span>
+            <span class="dots"></span>
+            <span class="price">5,500₮</span>
+          </div>
+          <div class="menu-item">
+            <svg class="thumb"><use href="#cup"/></svg>
+            <span class="name">Латте макиато</span>
+            <span class="dots"></span>
+            <span class="price">8,000₮</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section contact-section" id="contact">
+      <div class="container contact">
+        <div class="contact-info">
+          <h2>Бидэнтэй холбогдох</h2>
+          <p>📍 Баянзүрх дүүрэг,</p>
+          <p>📞 +976 9911-2233</p>
+          <p>🕗 Даваа–Ням: 08:00 – 22:00</p>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Баярлалаа! Таны мессеж илгээгдлээ.');">
+          <input type="text" placeholder="Таны нэр" required>
+          <input type="email" placeholder="И-мэйл" required>
+          <textarea rows="4" placeholder="Мессеж" required></textarea>
+          <button type="submit" class="btn btn-dark">Илгээх</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">Цэлмэг<span>кофе</span></a>
+      <p>© 2026 Цэлмэг Кофе. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
