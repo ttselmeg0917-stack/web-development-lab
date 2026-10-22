@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>
+    if (window.self !== window.top) document.documentElement.classList.add("in-frame");
     (function () {
       var theme = null;
       try { theme = localStorage.getItem("theme"); } catch (e) {}
@@ -20,6 +21,17 @@
   </script>
 </head>
 <body>
+  <div class="device-bar" id="deviceBar" role="group" aria-label="Төхөөрөмж сонгох">
+    <button class="device-btn" type="button" data-device="mobile" data-w="440" data-h="956"> <span>iPhone 17 Pro Max</span></button>
+    <button class="device-btn" type="button" data-device="tablet" data-w="820" data-h="1180"> <span>Таблет</span></button>
+    <button class="device-btn active" type="button" data-device="desktop"><span>Компьютер</span></button>
+  </div>
+  <div class="device-overlay" id="deviceOverlay" hidden>
+    <p class="device-label" id="deviceLabel"></p>
+    <div class="device-frame" id="deviceFrame">
+      <iframe id="deviceIframe" title="Төхөөрөмжийн харагдац"></iframe>
+    </div>
+  </div>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="cup" viewBox="0 0 220 200">
@@ -114,7 +126,7 @@
 
       <div class="container hero-inner">
         <div class="hero-text">
-          <h1 id="hero-title">Шинэхэн шарсан<br>кофе танд</h1>
+          <h1 id="hero-title">Шинэхэн халуун<br>кофе танд</h1>
           <p>Ногоон кофены үрийг халуун агаарт шарж, өглөө бүр шинээр нунтаглан бэлтгэдэг. Амт, үнэрийг нь мэдрээрэй.</p>
           <div class="btn-group">
             <a href="#shop" class="btn btn-dark">Захиалах</a>
