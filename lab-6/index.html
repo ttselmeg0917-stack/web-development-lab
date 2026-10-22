@@ -16,6 +16,7 @@
     (function () {
       var root = document.documentElement;
       root.classList.add("js");
+      if (window.self !== window.top) root.classList.add("in-frame");
       var theme = null;
       try { theme = localStorage.getItem("theme"); } catch (e) {}
       if (!theme) {
@@ -26,6 +27,18 @@
   </script>
 </head>
 <body>
+  <div class="device-bar" id="deviceBar" role="group" aria-label="Төхөөрөмж сонгох">
+    <button class="device-btn" type="button" data-device="mobile" data-w="440" data-h="956"> <span>iPhone 17 Pro Max</span></button>
+    <button class="device-btn" type="button" data-device="tablet" data-w="820" data-h="1180"> <span>Таблет</span></button>
+    <button class="device-btn active" type="button" data-device="desktop"> <span>Компьютер</span></button>
+  </div>
+  <div class="device-overlay" id="deviceOverlay" hidden>
+    <p class="device-label" id="deviceLabel"></p>
+    <div class="device-frame" id="deviceFrame">
+      <iframe id="deviceIframe" title="Төхөөрөмжийн харагдац"></iframe>
+    </div>
+  </div>
+
   <a class="skip-link" href="#main">Үндсэн агуулга руу шилжих</a>
 
   <div class="loader" id="loader" role="status" aria-live="polite">
@@ -348,7 +361,7 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Зургийн цомог</p>
-          <h2 id="gallery-title">Манай ундаанууд</h2>
+          <h2 id="gallery-title">Манай уух зүйлс</h2>
           <p>Карт дээрх <strong>↻</strong> товчийг дарж зургийн ар талын мэдээллийг (нэр, огноо, газар) үзээрэй.</p>
         </header>
 
@@ -560,7 +573,7 @@
         <div class="story-text">
           <p class="eyebrow">Богино видео</p>
           <h2 id="story-title">12 секундэд<br>Цэлмэг Кофе</h2>
-          <p>Манай зургийн цомгийн ундаануудыг богино видеогоор үзээрэй. Видео нь монгол хэлний хадмалтай (CC товчоор асааж/унтраана).</p>
+          <p>Манай зургийн цомгийн уух зүйлс богино видеогоор үзээрэй. Видео нь монгол хэлний хадмалтай (CC товчоор асааж/унтраана).</p>
         </div>
 
         <figure class="video-frame">
@@ -571,7 +584,7 @@
             <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
             <p>Таны браузер видео тоглуулах боломжгүй байна. <a href="video/clip.mp4">Видеог татаж үзэх</a>.</p>
           </video>
-          <figcaption id="video-desc">Цэлмэг Кофены 6 ундааг харуулсан 12 секундын видео (дуугүй, хадмалтай).</figcaption>
+          <figcaption id="video-desc">Цэлмэг Кофены 6 уух зүйлс харуулсан 12 секундын видео (дуугүй, хадмалтай).</figcaption>
         </figure>
       </div>
     </section>

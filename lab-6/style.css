@@ -38,6 +38,7 @@
   --radius-pill: 999px;
 
   --header-h: 70px;
+  --bar-h: 44px;
   --font-body: "Poppins", "Segoe UI", Arial, sans-serif;
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 
@@ -82,7 +83,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-h);
+  scroll-padding-top: calc(var(--header-h) + var(--bar-h));
+}
+
+.in-frame {
+  --bar-h: 0px;
 }
 
 body {
@@ -91,6 +96,7 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  padding-top: var(--bar-h);
   transition: background var(--dur-med), color var(--dur-med);
 }
 
@@ -326,7 +332,7 @@ textarea {
 
 .header {
   position: sticky;
-  top: 0;
+  top: var(--bar-h);
   z-index: 100;
   background: var(--header-bg);
   backdrop-filter: blur(8px);
@@ -1528,7 +1534,7 @@ address { font-style: normal; }
   .sidebar {
     grid-template-columns: minmax(0, 1fr);
     position: sticky;
-    top: calc(var(--header-h) + 20px);
+    top: calc(var(--header-h) + var(--bar-h) + 20px);
   }
 
   .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
@@ -1536,6 +1542,136 @@ address { font-style: normal; }
   .story-text h2 { font-size: 3rem; }
 
   .footer-grid { grid-template-columns: 2fr 1fr 1.3fr 1.3fr; }
+}
+
+/* =========================================================
+   ТӨХӨӨРӨМЖ СОНГОГЧ (iPhone 17 Pro Max / Таблет / Компьютер)
+   ========================================================= */
+.device-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bar-h);
+  z-index: 600;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: #120d0a;
+  border-bottom: 1px solid #3a2e26;
+}
+
+.in-frame .device-bar,
+.in-frame .device-overlay {
+  display: none !important;
+}
+
+.device-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  color: #d8cbbf;
+  background: transparent;
+  border: 1px solid #3a2e26;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dur-med), border-color var(--dur-med), color var(--dur-med);
+}
+
+.device-btn:hover {
+  border-color: #dba970;
+  color: #ffffff;
+}
+
+.device-btn.active {
+  background: #dba970;
+  border-color: #dba970;
+  color: #1c1c1c;
+}
+
+.device-overlay {
+  position: fixed;
+  top: var(--bar-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 550;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(12, 9, 7, 0.94);
+  overflow: hidden;
+}
+
+.device-overlay[hidden] {
+  display: none;
+}
+
+.device-label {
+  color: #f0c38e;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.device-frame {
+  transform-origin: top center;
+  padding: 14px;
+  background: #050505;
+  border-radius: 46px;
+  box-shadow: 0 0 0 2px #444, 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.device-frame.tablet {
+  padding: 20px;
+  border-radius: 28px;
+}
+
+.device-frame iframe {
+  display: block;
+  max-width: none;
+  border: 0;
+  background: #ffffff;
+  border-radius: 34px;
+}
+
+.device-frame.tablet iframe {
+  border-radius: 10px;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 559px) {
+  .device-btn span {
+    display: none;
+  }
+  .device-btn {
+    padding: 6px 14px;
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 12px 22px;
+  }
+  .g-caption h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1023px) {
+  .product-card:hover,
+  .menu-item:hover {
+    transform: none;
+  }
+  .nav-menu.open {
+    border-bottom: 2px solid var(--accent);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

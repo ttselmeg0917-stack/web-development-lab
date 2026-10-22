@@ -180,3 +180,50 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.target.reset();
   showToast("Таны мессеж илгээгдлээ. Баярлалаа!");
 });
+/* =========================================================
+   ТӨХӨӨРӨМЖ СОНГОГЧ
+   ========================================================= */
+const deviceBar = document.getElementById("deviceBar");
+const deviceBtns = document.querySelectorAll(".device-btn");
+const deviceOverlay = document.getElementById("deviceOverlay");
+const deviceFrame = document.getElementById("deviceFrame");
+const deviceIframe = document.getElementById("deviceIframe");
+const deviceLabel = document.getElementById("deviceLabel");
+
+function fitDevice() {
+  if (deviceOverlay.hidden) return;
+  const scale = Math.min(
+    1,
+    (window.innerWidth - 40) / deviceFrame.offsetWidth,
+    (window.innerHeight - deviceBar.offsetHeight - 70) / deviceFrame.offsetHeight
+  );
+  deviceFrame.style.transform = `scale(${scale})`;
+}
+
+function setDevice(btn) {
+  deviceBtns.forEach((b) => b.classList.toggle("active", b === btn));
+
+  if (btn.dataset.device === "desktop") {
+    deviceOverlay.hidden = true;
+    document.body.classList.remove("no-scroll");
+    return;
+  }
+
+  const w = Number(btn.dataset.w);
+  const h = Number(btn.dataset.h);
+  deviceIframe.style.width = w + "px";
+  deviceIframe.style.height = h + "px";
+  deviceFrame.classList.toggle("tablet", btn.dataset.device === "tablet");
+
+  if (!deviceIframe.getAttribute("src")) {
+    deviceIframe.src = location.href.split("#")[0];
+  }
+
+  deviceLabel.textContent = `${btn.textContent.trim()} — ${w} × ${h}px`;
+  deviceOverlay.hidden = false;
+  document.body.classList.add("no-scroll");
+  fitDevice();
+}
+
+deviceBtns.forEach((btn) => btn.addEventListener("click", () => setDevice(btn)));
+window.addEventListener("resize", fitDevice);
